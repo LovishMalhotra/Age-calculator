@@ -1,0 +1,157 @@
+@import 'src/scss/variables';
+
+.calculator {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 840px;
+	height: 650px;
+	padding: 50px;
+	border-radius: 25px 25px 200px 25px;
+	background: #fff;
+	@media (max-width: 992px) {
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		border-radius: 25px 25px 100px 25px;
+		padding: 60px 30px;
+	}
+	@media (max-width: 768px) {
+		height: auto;
+		width: 100vw;
+	}
+}
+
+.form {
+	display: flex;
+	justify-content: space-evenly;
+
+	.inputForm {
+		display: flex;
+		flex-direction: column;
+		margin-right: 30px;
+
+		@media (max-width: 992px) {
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+
+		@media (max-width: 768px) {
+			margin-right: 0;
+			margin-bottom: 15px;
+			width: 100%;
+		}
+
+		> label {
+			display: inline-block;
+			margin-bottom: 15px;
+			color: $text-color;
+			font-size: 10px;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 14px;
+			letter-spacing: 0.15em;
+		}
+
+		> input {
+			display: flex;
+			width: 150px;
+			padding: 15px 15px;
+			font-size: 36px;
+			color: $text-black;
+			font-style: normal;
+			font-weight: 700;
+			border: 2px solid $border-color;
+			border-radius: 5px;
+
+			@media (max-width: 768px) {
+				width: 100%;
+				font-size: 24px;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.calculateButton {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	position: relative;
+
+	button {
+		display: block;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: transparent;
+		padding: 25px;
+		background-color: $accent-color;
+		z-index: 3;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: calc(100% - 70px - 30px);
+		height: 2px;
+		background-color: $border-color;
+	}
+	@media (max-width: 992px) {
+		justify-content: center;
+		&::before {
+			width: calc(100% - 10px);
+		}
+	}
+	@media (max-width: 768px) {
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.output {
+	display: block;
+	@media (max-width: 992px) {
+		margin-top: 30px;
+	}
+}
+
+.outputCalculation {
+	display: flex;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 0;
+	transform: translateY(-5%);
+	@media (max-width: 992px) {
+		font-size: 48px;
+	}
+	@media (max-width: 768px) {
+		font-size: 36px;
+	}
+}
+
+.calculatedAge {
+	margin-right: 15px;
+	color: $accent-color;
+}
+
+.error,
+.labelError {
+	color: red;
+}
+
+.errorMessage {
+	margin-top: 5px;
+	font-size: 12px;
+	color: red;
+}
+
+.inputForm.labelError > label {
+	color: red;
+}
