@@ -1,6 +1,7 @@
 {
 	"name": "age",
 	"private": true,
+	"homepage": "https://age-kslnk7wm3-lovishmalhotra.vercel.app/",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
